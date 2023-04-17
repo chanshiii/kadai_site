@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="ja">
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>チーズアカデミー</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/reset.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<!-- 最初の設定は終わっています　必要な方は触ってください -->
+
+<body>
+  <div class="container">
+    <!-- この中に記述していく -->
+    <!-- ここから下にコードを書く -->
+    <header clasas="header">
+      <div class="header__wrapper">
+        <div class="header__image">
+          <span class="font-round"><a href="#"><img src="./img/header_logo.png" alt="ヘッダーロゴ"></a></span>
+        </div>
+        <nav>
+          <ul class="header__list">
+            <li class="header__item"><span class="font-round"><a href="#About">About</a></span></li>
+            <li class="header__item"><span class="font-round"><a href="#Course">Course</a></span></li>
+            <li class="header__item"><span class="font-round"><a href="#NEWS">NEWS</a></span></li>
+            <li class="header__item"><span class="font-round"><a href="#Access">Access</a></span></li>
+            <li class="header__item"><span class="font-round"><a href="#Contact">Contact</a></span></li>
+          </ul>
+        </nav>
+      </div>
+    </header>
+    <div class="hero-image__wrapper">
+      <div class="hero-image__img">
+          <!-- <img src="./img/mainbg.png" alt="メインロゴ"> -->
+        <div class="hero__content">
+          <h1 class="main-title">セカイを変えるチーズを作ろう</h1>
+          <p class="sub-title">チーズ職人養成学校「チーズアカデミーTOKYO」</p>
+        </div>
+      </div>
+    </div>
+
+    <main>
+      <section id="Contact" class="contact">
+        <div class="contact__wrapper">
+            <h2 class="contact__ttl">Contact</h2>
+            <h3 class="contact-sub__ttl">説明会お申し込み・お問い合わせ</h3>
+            <p class="contact__text1">
+              ぜひ1度、足を運んでみませんか。説明会は随時開催中。<br>
+        その他、お問い合わせもお気軽にどうぞ。お待ちしております。
+            </p>
+            <p class="contact__text2">
+              ※チーズアカデミーは実際には存在しません。<br> 
+        間違っても問い合わせしないようお願いいたします。
+            </p>
+            <form action="#" method="post">
+              <dl class="form__inner">
+                <dt class="form__title">名前</dt>
+                <dd class="form__item"><input type="text" name="name" id="name" class="form__parts"></dd>
+                <dt class="form__title">カナ</dt>
+                <dd class="form__item"><input type="text" name="name" id="name" class="form__parts"></dd>
+                <dt class="form__title">メールアドレス</dt>
+                <dd class="form__item"><input type="email" name="email" id="email" class="form__parts"></dd>
+                <dt class="form__title">チーズアカデミーを知ったきっかけ</dt>
+                <dd class="form__item">
+                  <select name="select__box" id="select__box" class="form__parts">
+                    <option value="empty_botton"></option>
+                    <option value="googole_botton">google選択</option>
+                    <option value="sns__botton">SNS</option>
+                    <option value="introduction__botton">紹介</option>
+                    <option value="other1__botton">たまたま通りかかった</option>
+                    <option value="other2__botton">その他</option>
+                  </select>
+                </dd>
+                <dt class="form__title form__detail">志望動機</dt>
+                <dd class="form__item">
+                  <label for="checkbox1" class="form__check"><input type="checkbox" name="kind " id="radio1">起業をしたい</label>
+                  <label for="checkbox2" class="form__check"><input type="checkbox" name="kind " id="radio2">チーズ系企業に就職・転職したい</label>
+                  <label for="checkbox3" class="form__check"><input type="checkbox" name="kind " id="radio3">チーズと関わる仕事をしており、仕事に生かしたい</label>
+                  <label for="checkbox4" class="form__check"><input type="checkbox" name="kind " id="radio4">チーズの教養を身につけたい</label>
+                </dd>
+                <dt class="form__title">詳細</dt>
+                <dd class="form__item"><textarea name="detail" id="detail" cols="30" rows="3" class="form__parts"></textarea></dd>
+              </dl>
+              <input type="submit" value="送信" class="btn btn__submit">
+            </form>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <small class="copyrights">
+        copyrights 2016 Cheeese Academy Tokyo All RIghts Reserved.
+      </small>
+    </footer>
+    </div>
+
+  <!-- ここから上にコードを書く -->
+  <!-- この中に記述していく -->
+  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+
+</html>

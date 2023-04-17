@@ -1,0 +1,675 @@
+/* ここから下に記載していく */
+@charset "utf-8";
+
+
+html {
+    /* font-sizeをrem表記 16px  * 62.5 = 10px */
+    font-size: 62.5%; 
+}
+
+body {
+    font-size: 1.8rem;
+    font-family: 'Open Sans', sans-serif;
+    color: #222222;
+    text-align: center;
+    background-color: #6AC1B7;
+}
+
+img {
+    max-width: 100%;
+    height: 0 auto;
+}
+
+/* .text-center {
+    text-align: center;
+} */
+
+.container {
+    /* 全体の横幅を指定、
+    
+    */
+    max-width: 1080px;
+    margin: 0 auto;
+}
+
+/*---------------------
+*header
+---------------------*/
+.header {
+    /* width: 80%; */
+    max-width: 1080px;
+}
+
+.header__wrapper {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.header__image img {
+    width: 250px;
+}
+
+.font-round_header:hover{
+    color: #89ee16;
+    display: inline-block;
+    transition: all 5s;
+    transform: rotateX(1800deg);
+}
+
+.header__list {
+    display: flex;
+    font-size: 2.1rem;
+    padding: 50px 0;
+    border-radius: 35%;
+    background-color: #517D99;
+}
+
+.header__item {
+    margin: 0 50px 0 0;
+}
+
+.header__item>span>a {
+    color: #222222;
+    text-decoration: none;
+}
+
+/*---------------------
+*hero-image
+---------------------*/
+
+.hero-image__img {
+    /* position: relative; */
+    width: 100%;
+    height: 500px;
+    background-image: url("../img/mainbg.png");
+    background-position: center;
+    background-size: cover;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.hero__content {
+    color: #fff;
+    /* position: absolute;
+    top: 50%;
+    left: 50%;  
+    transform: translate3d(-50%, -50% , 0); */
+}
+
+.main-title {
+    font-size: 4rem;
+    font-weight: bold;
+    margin: 0 0 30px;
+}
+
+.sub-title {
+    font-size: 2.8rem;
+}
+
+/*---------------------
+*about
+---------------------*/
+.about {
+    width: 780px;
+    margin: 0 auto;
+    padding: 60px 0 0;
+}
+
+.about__ttl {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #ffd61a;
+    margin: 0 0 30px;
+}
+
+.about__ttl>a {
+    color: #ffd61a;
+    text-decoration: none;
+}
+
+/* ↓線が離れたボタン作成 */
+
+.btn-border {
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 1.5;
+    position: relative;
+    display: inline-block;
+    padding: 1rem 4rem;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    -webkit-transition: all 0.3s;
+    transition: all 0.3s;
+    text-align: center;
+    vertical-align: middle;
+    text-decoration: none;
+    letter-spacing: 0.1em;
+    color: #212529;
+    border-radius: 0.5rem;
+}
+
+a.btn-border-shadow {
+    padding: calc(1.5rem - 12px) 3rem 1.5rem;
+    background: #fff;
+}
+
+a.btn-border-shadow:before {
+    position: absolute;
+    top: -6px;
+    left: -6px;
+
+    width: 100%;
+    height: 100%;
+
+    content: "";
+    -webkit-transition: all 0.3s ease;
+    transition: all 0.3s ease;
+
+    border: 3px solid #000;
+    border-radius: 0.5rem;
+}
+
+a.btn-border-shadow:hover {
+    padding: calc(1.5rem - 6px) 3rem;
+}
+
+a.btn-border-shadow:hover:before {
+    top: 0;
+    left: 0;
+}
+/* ↑線が離れたボタン作成 */
+.about-sub__ttl {
+    font-size: 1.8rem;
+    margin: 0 0 60px;
+}
+
+.sub-text1 {
+    margin: 0 0 20px;
+}
+
+.sub-text2 {
+    margin: 0 0 40px;
+    line-height: 2;
+}
+
+.sub-text3 {
+    margin: 0 0 80px;
+    line-height: 2;
+}
+
+.eyecatch__list {
+    display: flex;
+    flex-direction: row-reverse;
+}
+/* 以下、画像の上にREADMOREの文字を表示方法 */
+.eyecatch__item {
+    position: relative;
+    overflow: hidden;
+}
+.eyecatch__item::before,
+.eyecatch__item::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    margin: auto;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+    opacity: 0;
+}
+.eyecatch__item:before {
+    background: rgba(190,91,70,.6);
+    width: 100%;
+    height: 100%;
+}
+.eyecatch__item::after {
+    color: #fff;
+    content: "Read More";
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+}
+
+.eyecatch__item:hover::before,
+.eyecatch__item:hover::after {
+    opacity: 1;
+}
+
+/*---------------------
+*Course
+---------------------*/
+.course {
+    background-color: #BFE9DB;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 60px 0 0;
+}
+
+.course__ttl {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin: 0 0 30px;
+}
+
+.course__ttl>a {
+    color: #ffd61a;
+    text-decoration: none;
+}
+
+.course-sub__ttl {
+    margin: 0 0 60px;
+    line-height: 2;
+}
+
+.course__wrap {
+    width: 100%;
+}
+
+.course__item {
+    display: flex;
+}
+
+.course__item:nth-child(even){
+    flex-direction: row-reverse;
+}
+
+.course__img {
+    width: 50%;
+    /* 全体の横幅1080pxに対して半分の大きさに指定 */
+    /* max-width: 540px; */
+    /* 高さは横並びにしているテキスト幅に合わせて指定した
+    余白を作成した際に画像の高さが足りなくなったため */
+    /* height: 416px; */
+    /* 横長になった画像を上記指定したサイズに合うように調整した */
+    /* object-fit: cover; */
+}
+
+/* 以下、画像の上にREADMOREの文字を表示方法 */
+.course__img {
+    position: relative;
+    overflow: hidden;
+}
+.course__img::before,
+.course__img::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    margin: auto;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+    opacity: 0;
+}
+.course__img:before {
+    background: rgba(190,91,70,.6);
+    width: 100%;
+    height: 100%;
+}
+.course__img::after {
+    color: #fff;
+    content: "Read More";
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+}
+
+.course__img:hover::before,
+.course__img:hover::after {
+    opacity: 1;
+}
+
+.course__content {
+    box-sizing: border-box;
+    /* width: 480px; */
+    width: 50%;
+    padding: 0 0 0 50px;
+    text-align: left;
+}
+
+.course__content.content__parts {
+    padding: 0 50px 0 0;
+}
+
+.course__heading {
+    font-size: 1.9;
+    font-weight: bold;
+    padding: 120px 0 40px;
+}
+
+.course__text {
+    font-size: 1.4rem;
+    line-height: 1.12;
+    padding: 0 0 120px;
+}
+
+/*---------------------
+*News
+---------------------*/
+.news__wrapper {
+    padding: 60px 0 60px;
+}
+
+.news__ttl {
+    font-size: 2.4rem;
+    font-weight: bold;
+    color: #ffd61a;
+    margin: 0 0 30px;
+}
+
+.news__ttl>a {
+    color: #ffd61a;
+    text-decoration: none;
+}
+
+.news-sub__ttl {
+    font-size: 2rem;
+    margin: 0 0 60px;
+}
+
+.news__list {
+    display: flex;
+    margin: 0 0 60px;
+    /* margin: 0 auto;   news__itemで中央寄せすると旨くいった。なぜ？*/
+}
+
+.news__item {
+    width: 300px;
+    margin: 0 15px 0;
+    margin: 0 auto;
+}
+
+.news__eyecatch {
+    margin: 0 0 30px;
+}
+
+/* .news__eyecatch:hover {
+    transform: scale(1.3);
+} */
+
+/* 以下、画像の上にREADMOREの文字を表示方法 */
+.news__eyecatch {
+    position: relative;
+    overflow: hidden;
+}
+.news__eyecatch::before,
+.news__eyecatch::after {
+    content: "";
+    display: block;
+    position: absolute;
+    margin: auto;
+    top: 0;
+    left: 0;
+    margin: auto;
+    transition: .3s cubic-bezier(0.45, 0, 0.55, 1);
+    opacity: 0;
+}
+.news__eyecatch:before {
+    background: rgba(190,91,70,.6);
+    width: 100%;
+    height: 100%;
+}
+.news__eyecatch::after {
+    color: #fff;
+    content: "Read More";
+    font-size: 22px;
+    font-weight: bold;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    align-items: center;
+    bottom: 0;
+    right: 0;
+}
+
+.news__eyecatch:hover::before,
+.news__eyecatch:hover::after {
+    opacity: 1;
+}
+
+
+.news__date {
+    margin: 0 0 24px;
+}
+
+.news__text {
+    line-height: 1.75;
+}
+
+.btn {
+    display: block;
+    width: 300px;
+    height: 60px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    padding: 21px 0;
+    box-sizing: border-box;
+    margin: 0 auto;
+    border-radius: 45%;
+    border: soild 1px #ffd61a;
+    background-color: #ffd61a;;
+}
+
+.btn>a {
+    text-decoration: none;
+}
+
+.font-round:hover{
+    color: #89ee16;
+    display: inline-block;
+    transition: all 1s;
+    transform: rotateX(360deg);
+}
+
+/*---------------------
+*Access
+---------------------*/
+.access__wrapper {
+    padding: 60px 0 30px;
+    background-color: #DFEFED;
+}
+
+.access__ttl {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin: 0 0 30px;
+}
+
+.access__ttl>a {
+    color: #ffd61a;
+    text-decoration: none;
+}
+
+.access-sub__ttl {
+    margin: 0 0 60px;
+}
+
+.googlemap {
+    margin: 0 0 60px;
+} 
+
+.table span {
+    display: inline-block;
+}
+
+.table span:nth-child(1) {
+    width: 170px;
+    /* border: solid 1px #222222; */
+    margin: 0 0 30px;
+    padding: 16px 0;
+}
+
+.table span:nth-child(2) {
+    width: 400px;
+    /* border: solid 1px #222222; */
+    margin: 0 0 30px;
+}
+
+/*---------------------
+*Contact
+---------------------*/
+.contact {
+    margin: 60px 0 140px;
+}
+
+.contact__wrapper {
+    width: 760px;/*横幅*/
+    margin: 0 auto;/*中央寄せ*/
+    padding: 60px 0;
+}
+
+.contact__ttl {
+    font-size: 2.4rem;
+    font-weight: bold;
+    margin: 0 0 30px;
+}
+
+.contact__ttl>a {
+    color: #ffd61a;
+    text-decoration: none;
+}
+
+.contact-sub__ttl {
+    margin: 0 0 60px;
+}
+
+.contact__text1 {
+    margin: 0 0 30px;
+    line-height: 1.75;
+}
+.contact__text2 {
+    margin: 0 0 70px;
+    line-height: 1.75;
+}
+
+.form__inner {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 auto;
+}
+
+.form__title {
+    width: 20%;
+    /* height: 36px; */
+    margin: 0 64px 0 16px;
+    padding: 8px 0 0;
+    font-weight: bold;
+    text-align: left;
+}
+
+.form__title.form__detail {
+    height: 180px;
+}
+
+.form__item {
+    box-sizing: border-box;
+    width:  50%;
+    /* 高さを指定してしまったせいでformのなかに送信ボタンがはいってしまった */
+    /* height: 36px; */
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    padding: 8px 0 20px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.form__check {
+    font-size: 1.7rem;
+    margin: 0 0 24px;
+    text-align: left;
+}
+
+.form__parts {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    box-sizing: border-box;
+    width: 100%;
+    margin: 8px;
+    padding: 8px;
+    font-size: 1.6rem;
+    border: 1px solid #222222;
+}
+
+.form-skill-txt {
+    font-size: 1.6rem;
+    font-weight: bold;
+}
+
+
+input [type*="checkbox"] {
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    width: 328px;
+}
+
+/* input [type*="checkbox"]:checked{
+    background-color: #ffd61a;
+    width: 328px;
+} */
+
+input[type*="submit"]{
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    border: none;
+}
+
+/*---------------------
+*footer
+---------------------*/
+.footer {
+    background-color: #707070;
+    padding: 30px 0;
+}
+
+.copyrights {
+    color: #ffffff;
+}
+
+
+@media screen and (max-width:560px) {
+    /*---------------------
+    *header
+    ---------------------*/
+    .header__image>img {
+        width: 100%;
+        min-width: 120px;
+    }
+
+    .header__list {
+        display: block;
+    }
+    
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
