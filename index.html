@@ -58,6 +58,7 @@
             <li class="header__item"><span class="font-round"><a href="#NEWS">NEWS</a></span></li>
             <li class="header__item"><span class="font-round"><a href="#Access">Access</a></span></li>
             <li class="header__item"><span class="font-round"><a href="#Contact">Contact</a></span></li>
+            <li class="header__item"><span class="font-round"><a href="#tagcloud">tagcloud</a></span></li>
           </ul>
         </nav>
       </div>
@@ -66,8 +67,8 @@
       <div class="hero-image__img">
           <!-- <img src="./img/mainbg.png" alt="メインロゴ"> -->
         <div class="hero__content">
-          <h1 class="main-title">セカイを変えるチーズを作ろう</h1>
-          <p class="sub-title">チーズ職人養成学校「チーズアカデミーTOKYO」</p>
+          <h1 class="main-title">今を「かたち」に</h1>
+          <p class="sub-title">もっと気軽に今、残したい瞬間を写真に残しませんか？</p>
         </div>
       </div>
     </div>
@@ -267,6 +268,13 @@
             </form>
         </div>
       </section>
+
+      <section class="tagcloud">
+        <div class="tagcloud__wrapper">
+          <h2 class="tagcloud__ttl"><a href="./tagcloud.html" target="_blank" class="btn-border btn-border-shadow">Tagcloud</a></h2>
+        </div>
+        </div>
+      </section>
     </main>
 
     <footer class="footer">
@@ -282,6 +290,7 @@
   <script src="js/main.js"></script> -->
 
   <script>
+    // ハンバーガーメニュー
     $(function() {
       $(".btn-trigger__open").click(function() {
     // 表示に設定
@@ -292,8 +301,9 @@
       $(".header-nav").css("display", "none");
   })});
   </script>
-  
+
   <script>
+  // abouの画像を自動的にスライド
     $('.eyecatch__list').slick({
       centerMode: true,
       centerPadding: '60px',
