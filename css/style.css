@@ -18,8 +18,8 @@ body {
 }
 
 .body { 
-    display: block;
-    /* display: none; */
+    /* display: block; */
+    display: none;
     position: fixed;
     top: 0;
     left: 0;
@@ -693,7 +693,7 @@ input[type*="submit"]{
         padding: 10px 0 0;
     }
 
-    .btn-trigger {
+    .btn-trigger__open {
         appearance: none;
         -webkit-appearance: none;
         display: block;
@@ -710,16 +710,33 @@ input[type*="submit"]{
         -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
 
-    .btn-trigger.active use:nth-last-of-type(1){
+    .btn-trigger__close.active use:nth-last-of-type(1){
         transform: translateY(30px) rotate(-45deg)
     }
 
-    .btn-trigger.active use:nth-last-of-type(2){
+    .btn-trigger__close.active use:nth-last-of-type(2){
         opacity: 0;
     }
 
-    .btn-trigger.active use:nth-last-of-type(3){
+    .btn-trigger__close.active use:nth-last-of-type(3){
         transform: translateX(35px) translateY(-15px) rotate(45deg)
+    }
+
+    .btn-trigger__close {
+        appearance: none;
+        -webkit-appearance: none;
+        display: block;
+        position: fixed;
+        top: 16px;
+        right: 500px;
+        z-index: 100;
+        width: 30px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
     }
 
     .header-nav {
