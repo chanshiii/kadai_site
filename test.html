@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tag Cloud</title>
+    <style>
+        /* タグクラウドのスタイル */
+        .tag-cloud {
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        .tag-cloud .tag {
+            padding: 5px 10px;
+            background-color: #f2f2f2;
+            margin: 5px;
+            cursor: pointer;
+        }
+
+        .tag-cloud .tag:hover {
+            background-color: #e0e0e0;
+        }
+
+        /* テキストボックスのスタイル */
+        .tag-input {
+            margin-bottom: 10px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Tag Cloud</h1>
+    <div class="tag-cloud" id="tagCloud">
+        <!-- タグクラウドの要素はここに追加されます -->
+    </div>
+    <input type="text" class="tag-input" id="tagInput" placeholder="キーワードを入力してEnterを押してください">
+    <script>
+        // タグクラウドの要素を取得
+        const tagCloud = document.getElementById('tagCloud');
+        // テキストボックスの要素を取得
+        const tagInput = document.getElementById('tagInput');
+
+        // キーワードをタグクラウドに追加する関数
+        function addTag() {
+            // テキストボックスの値を取得
+            const keyword = tagInput.value;
+            if (keyword.trim() !== '') {
+                // キーワードをタグとして追加
+                const tag = document.createElement('div');
+                tag.className = 'tag';
+                tag.textContent = keyword;
+                tag.addEventListener('click', function() {
+                    // クリックされたタグを削除
+                    tag.remove();
+                });
+                tagCloud.appendChild(tag);
+                // テキストボックスをクリア
+                tagInput.value = '';
+            }
+        }
+
+        // テキストボックスでEnterキーが押された場合にタグを追加
+        tagInput.addEventListener('keydown', function(event) {
+            if (event.key === 'Enter') {
+                event.preventDefault();
+                addTag();
+            }
+        });
+    </script>
+</body>
+</html>
