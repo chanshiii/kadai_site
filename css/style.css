@@ -11,8 +11,21 @@ body {
     font-size: 1.8rem;
     font-family: 'Open Sans', sans-serif;
     color: #222222;
+    /* カーソル画像変更 */
+    cursor : url(../img/camera.png), auto; 
     text-align: center;
     background-color: #6AC1B7;
+}
+
+.body { 
+    display: block;
+    /* display: none; */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: transparent; 
 }
 
 img {
@@ -53,8 +66,16 @@ img {
 .font-round_header:hover{
     color: #89ee16;
     display: inline-block;
-    transition: all 5s;
-    transform: rotateX(1800deg);
+    transition: all 10s;
+    transform: rotateX(360deg);
+}
+
+.btn-trigger {
+    display: none;
+}
+
+.header-nav {
+    padding: 20px 0 0;
 }
 
 .header__list {
@@ -62,11 +83,11 @@ img {
     font-size: 2.1rem;
     padding: 50px 0;
     border-radius: 35%;
-    background-color: #517D99;
+    /* background-color: #517D99; */
 }
 
 .header__item {
-    margin: 0 50px 0 0;
+    margin: 0 25px;
 }
 
 .header__item>span>a {
@@ -77,12 +98,15 @@ img {
 /*---------------------
 *hero-image
 ---------------------*/
+.hero-image__wrapper {
+    padding: 20px 0 0;
+}
 
 .hero-image__img {
     /* position: relative; */
     width: 100%;
     height: 500px;
-    background-image: url("../img/mainbg.png");
+    background-image: url("../img/hero-img.jpg");
     background-position: center;
     background-size: cover;
     display: flex;
@@ -112,9 +136,9 @@ img {
 *about
 ---------------------*/
 .about {
-    width: 780px;
-    margin: 0 auto;
-    padding: 60px 0 0;
+    width: 100%;
+    /* margin: 0 auto */
+    margin: 60px 0 80px;
 }
 
 .about__ttl {
@@ -362,8 +386,8 @@ a.btn-border-shadow:hover:before {
 /*---------------------
 *News
 ---------------------*/
-.news__wrapper {
-    padding: 60px 0 60px;
+.news {
+    margin: 60px 0 60px;
 }
 
 .news__ttl {
@@ -385,6 +409,7 @@ a.btn-border-shadow:hover:before {
 
 .news__list {
     display: flex;
+    width: 100%;
     margin: 0 0 60px;
     /* margin: 0 auto;   news__itemで中央寄せすると旨くいった。なぜ？*/
 }
@@ -453,7 +478,7 @@ a.btn-border-shadow:hover:before {
 }
 
 .btn {
-    display: block;
+    /* display: block; */
     width: 300px;
     height: 60px;
     font-size: 1.8rem;
@@ -480,15 +505,18 @@ a.btn-border-shadow:hover:before {
 /*---------------------
 *Access
 ---------------------*/
+.acces {
+    margin: 60px 0 0;
+}
+
 .access__wrapper {
-    padding: 60px 0 30px;
     background-color: #DFEFED;
 }
 
 .access__ttl {
     font-size: 2.4rem;
     font-weight: bold;
-    margin: 0 0 30px;
+    margin: 30px 0 30px;
 }
 
 .access__ttl>a {
@@ -531,7 +559,7 @@ a.btn-border-shadow:hover:before {
 .contact__wrapper {
     width: 760px;/*横幅*/
     margin: 0 auto;/*中央寄せ*/
-    padding: 60px 0;
+    /* padding: 60px 0; */
 }
 
 .contact__ttl {
@@ -646,30 +674,213 @@ input[type*="submit"]{
 }
 
 
-@media screen and (max-width:560px) {
+@media screen and (max-width:680px) {
+    body {
+        /* font-size: 1rem; */
+        font-size: 3vw;
+        /* 画面幅の 3% をフォントサイズとして指定 */
+    }
     /*---------------------
     *header
     ---------------------*/
-    .header__image>img {
+    .header__wrapper {
+        display: block;
         width: 100%;
-        min-width: 120px;
+        padding: 10px 0 ;
+    }
+
+    .header__image>img {
+        padding: 10px 0 0;
+    }
+
+    .btn-trigger {
+        appearance: none;
+        -webkit-appearance: none;
+        display: block;
+        position: fixed;
+        top: 16px;
+        right: 500px;
+        z-index: 100;
+        width: 30px;
+        padding: 0;
+        border: none;
+        background-color: transparent;
+        box-shadow: none;
+        outline: none;
+        -webkit-tap-highlight-color: rgba(0,0,0,0);
+    }
+
+    .btn-trigger.active use:nth-last-of-type(1){
+        transform: translateY(30px) rotate(-45deg)
+    }
+
+    .btn-trigger.active use:nth-last-of-type(2){
+        opacity: 0;
+    }
+
+    .btn-trigger.active use:nth-last-of-type(3){
+        transform: translateX(35px) translateY(-15px) rotate(45deg)
+    }
+
+    .header-nav {
+        /* nav出力するときはdisplayをblockにする */
+        /* display: block; */
+        display: none;
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(120,208,253,0.8);
     }
 
     .header__list {
         display: block;
+        padding: 84px 0 0;
+    }
+
+    .header__item {
+        margin: 0 0 60px;
+        text-align: center;
+    }
+
+    .header__item>span>a {
+        display: block;
+        font-size: 2.1rem;
     }
     
+    /*---------------------
+    *hero-img
+    ---------------------*/
+    .main-title {
+        font-size: 2.4rem;
+    }
+
+    .sub-title {
+        font-size: 2.0rem;
+    }
+
+    /*---------------------
+    *about
+    ---------------------*/
+
+    .about {
+        box-sizing: border-box;
+        width: 100%;
+        font-size: 1.3rem;
+        margin: 30px 0 40px ;
+        padding: 0 10px;
+    }
+
+    .about-sub__ttl {
+        margin: 0 0 20px;
+    }
+
+    .sub-text3 {
+        margin: 0;
+    }
+
+    /*---------------------
+    *Course
+    ---------------------*/
+    .course {
+        padding: 30px 0 0;
+    }
+
+    .course-sub__ttl {
+        font-size: 1.2rem;
+        margin: 0 0 20px;
+    }
+
+    .course__content {
+        box-sizing: border-box;
+        padding: 0 10px;
+    }
+
+    .course__content.content__parts {
+        padding: 0 10px;
+    }
+
+    .course__heading {
+        box-sizing: border-box;
+        font-size: 1.1rem;
+        padding: 25px 0 0 40px;
+    }
+
+    .course__text {
+        font-size: 1rem;
+        padding: 40px;
+    }
+
+    /*---------------------
+    *NEWS
+    ---------------------*/
+    .news {
+        margin: 30px 0 40px;
+    }
+
+    .news-sub__ttl {
+        font-size: 2rem;
+        margin: 0 0 20px;
+    }
+
+    .news__list {
+        margin: 0 0 20px;
+    }
+
+    .news__item {
+        margin: 0 10px;
+    }
+
+    .news__date {
+        font-size: 1.4rem;
+        margin: 0 0 10px;
+    }
+
+    .news__text {
+        font-size: 1rem;
+    }
+
+    .btn {
+        width: 200px;
+        height: 40px;
+        padding: 10px 0;
+    }
+
+    /*---------------------
+    *Access
+    ---------------------*/
+
+    .access-sub__ttl {
+        margin: 0 0 30px;
+    }
+
+    .map-wrapper {
+        position: relative;
+        overflow: hidden;
+        padding-top: 35%; /* 地図のアスペクト比を設定 */
+        height: 0;
+    }
+    .googlemap iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+    }
+
+    /*---------------------
+    *Contact
+    ---------------------*/
+    .contact__wrapper {
+        width: 100%;
+    }
+
+    .contact-sub__ttl {
+        margin: 0 0 30px;
+    }
+
+    .contact__text2 {
+        margin: 0 0 30px;
+    }
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
