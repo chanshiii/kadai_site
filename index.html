@@ -12,6 +12,9 @@
   <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400;700&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="css/reset.css">
   <link rel="stylesheet" href="css/style.css">
+  <script src="./js/jquery-3.6.0.min.js"></script>
+    <!-- jqueryを読み込んでからslickを読み込む -->
+  <script type="text/javascript" src="slick/slick.min.js"></script>
 </head>
 <!-- 最初の設定は終わっています　必要な方は触ってください -->
 
@@ -251,8 +254,39 @@
 
   <!-- ここから上にコードを書く -->
   <!-- この中に記述していく -->
-  <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
-  <script src="js/main.js"></script>
+  <!-- <script src="https://code.jquery.com/jquery-3.2.1.min.js"></script>
+  <script src="js/main.js"></script> -->
+
+  <script>
+    $('.eyecatch__list').slick({
+      centerMode: true,
+      centerPadding: '60px',
+      slidesToShow: 3,
+      autoplay:true,
+      autoplaySpeed:500,
+      responsive: [
+        {
+          breakpoint: 768,
+          settings: {
+          arrows: false,
+          centerMode: true,
+          centerPadding: '40px',
+          slidesToShow: 3
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+        arrows: false,
+        centerMode: true,
+        centerPadding: '40px',
+        slidesToShow: 1
+        }
+      }
+    ]
+    });
+  </script>
+
 </body>
 
 </html>
